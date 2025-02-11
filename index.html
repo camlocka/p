@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Valentine's Proposal</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="Mainprompt">
+            <img class="image" src="images/catflower.jpg" alt="Cat with flower">
+            <h1 class="hh" id="name">Hey Petra, I wanna ask youuu</h1>
+            <p class="pp" id="question">Will you be my Valentine?</p>
+            <div class="buttons">
+                <button id="no-button" onclick="showMessage('No')">No</button>
+                <button onclick="showMessage('Yes')" id="yesButton">Yes</button>
+            </div>
+            <div class="hidden-message" id="no-message">
+                <p>What the freak 💔💔</p>
+            </div>
+            <div class="hidden-message" id="yes-message">
+                <p>YAY! See you on the 14th, babygirl.</p>
+            </div>
+        </div>
+    </div>
+
+    <audio id="background-music" loop>
+        <source src="images/spotidownloader.com - No One Noticed (Extended Spanish) - The Marías.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+    <script>
+        const audio = document.getElementById("background-music");
+
+        // Set initial volume to 20% (optional, can be removed if not needed)
+        audio.volume = 0.1;
+
+        // Play music from a specific timestamp when the screen is clicked or touched
+        document.body.addEventListener("click", function () {
+            if (audio.paused) {
+                audio.currentTime = 117; // Start playback at 30 seconds
+                audio.play();
+            }
+        });
+    </script>
+</body>
+
+</html>
